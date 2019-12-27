@@ -4,35 +4,62 @@
     <meta charset="UTF-8">
     <title>articles</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="style.css">
-
   </head>
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" id="comments">
+      <tmodal>
+        <h4 id="articleName">...</h4>
+      
+      </tmodal>
+      <p>Add your comment..</p>
+      <input type="text" name="comments" id="input-form"><br>
+      <button class="btn" id="submit">Comment</button>
+    </div>
+     </div>
+
+
   <body class="container">
     <h3 class="header">Web News Hub</h3>
     <div id="buttons">
       <button class="btn" id="scrape">Get New Articles</button>
+      <button class="btn" id="clear">Clear Articles</button>
     </div>
+
+
+
+    <form action="/submit" method="post">
+      <input type="text" name="username" placeholder="username">
+      <input type="text" name ="email" placeholder="email">
+      <input type="submit">
+    </form>
+
+
+
     <table id="results">
+
       <thead>
         <tr>
-          <th id="article-name">Headline</th>
-          <th id="article-legs">Summary</th>
-          <th id="article-class">Go to Page</th>
+          <th id="article-link">Link</th>
+          <th id="article-headline">Summary</th>
+          <th id="article-comments">Comments</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Results from DB here -->
-        
 
+
+      <tbody id="aName">
+        <!-- Results from DB here -->
       </tbody>
+
     </table>
+
     <script src="app.js"></script>
-  </body>
+
+     </body>
 </html>
